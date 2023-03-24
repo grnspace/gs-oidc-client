@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Wellness Together Canada OIDC Client</title>
+    <title>Greenspace OIDC Client</title>
     <meta charset="utf-8" />
     <meta
       name="viewport"
@@ -20,119 +20,43 @@
   <body class="py-5">
     <div class="container">
       <div class="section">
-        <h1>Wellness Together Canada OIDC Client</h1>
+        <h1>Greenspace OIDC Client</h1>
       </div>
 
       <div class="section mt-5">
-        <h2 class="mb-2">Add a “Sign in with WTC” button</h2>
+        <h2 class="mb-2">Add a “Sign in with GS” button</h2>
         <p>
-          We provide a “Sign in with WTC” button for directing your clients to
-          the WTC sign in portal. The button can easily be added to your site
+          We provide a “Sign in with GS” button for directing your clients to
+          the GS sign in portal. The button can easily be added to your site
           using JS or a combination of HTML and CSS.
         </p>
 
         <div
-          class="wtc-signin mb-3 mr-2 d-inline-block"
-          data-client-id="health-canada-demo-pkce"
+          class="gs-signin mb-3 mr-2 d-inline-block"
+          data-client-id="gs-dev-demo-pkce"
           data-response-type="code"
           data-scope="openid email"
-          data-redirect-uri="https://grnspace.github.io/wtc-oidc-client/"
+          data-redirect-uri="https://grnspace.github.io/gs-oidc-client/"
           data-code-challenge="4n8lM-b0cQnITX2Gy0mfviaQv_fYhU0pzEGJr7HeA-o"
           data-code-challenge-method="S256"
           data-response-mode="query"
-          data-host="https://app.wellnesstogether.grnspace.ca"
+          data-host="https://app.staging.grnspace.ca"
         ></div>
 
         <div
-          class="wtc-signin mb-3 d-inline-block"
-          data-client-id="health-canada-demo-pkce"
+          class="gs-signin mb-3 d-inline-block"
+          data-client-id="gs-dev-demo-pkce"
           data-response-type="code"
           data-scope="openid email"
-          data-redirect-uri="https://grnspace.github.io/wtc-oidc-client/"
+          data-redirect-uri="https://grnspace.github.io/gs-oidc-client/"
           data-code-challenge="4n8lM-b0cQnITX2Gy0mfviaQv_fYhU0pzEGJr7HeA-o"
           data-code-challenge-method="S256"
           data-response-mode="query"
-          data-host="https://app.wellnesstogether.grnspace.ca"
+          data-host="https://app.staging.grnspace.ca"
           data-lang="fr"
         ></div>
 
         <pre><code id="id-token-result" class="json" style="display: none;"></code></pre>
-      </div>
-
-      <div class="section mt-5">
-        <h3>Using wtc_signin.js</h3>
-
-        <p>
-          The easiest way to add the sign in button is to use the JS hosted in
-          our CDN.
-        </p>
-      </div>
-
-      <pre
-        class="mb-4"
-      ><code class="html">&lt;!-- Load the script from our CDN --&gt;
-&lt;script
-  src="https://cdn-ca.grnspace.ca/wtc_signin.min.js"
-  async
-  defer
-&gt;&lt;/script&gt;
-
-&lt;!-- Add an element with the .wtc-signin class where you want the button --&gt;
-&lt;!-- Data attributes are used to form the URL to the WTC authorize page --&gt;
-&lt;div
-  class="wtc-signin"
-  data-host="https://app.wellnesstogether.grnspace.ca"
-  data-lang="en"
-  data-client-id="health-canada-demo-pkce"
-  data-response-type="code"
-  data-scope="openid email"
-  data-redirect-uri="https://grnspace.github.io/wtc-oidc-client/"
-  data-code-challenge="4n8lM-b0cQnITX2Gy0mfviaQv_fYhU0pzEGJr7HeA-o"
-  data-code-challenge-method="S256"
-  data-state="nifty"
-  data-response-mode="query"
-&gt;&lt;/div&gt;</code></pre>
-
-      <div class="section">
-        <p>
-          All of the query string values used in the
-          <em>Authorization Code Flow with PKCE</em> should be set as data
-          attributes on the <code>.wtc-signin</code> element. The code challenge
-          should be generated on the server and rendered in the output HTML.
-          <br />
-          Additionally, the WTC button supports attributes for setting the OIDC
-          provider host, and the language of the button text.
-        </p>
-
-        <dl>
-          <div class="row mb-3">
-            <div class="col-12 col-md-3">
-              <dt><code>data-lang</code></dt>
-            </div>
-            <div class="col">
-              <dd>
-                Set the language to render the button in. Defaults to the
-                <code>lang</code> attribute on the document’s
-                <code>&lt;html&gt;</code> element, or English. Supported values
-                are <code>en</code> for English and <code>fr</code> for French.
-              </dd>
-            </div>
-          </div>
-
-          <div class="row mb-3">
-            <div class="col-12 col-md-3">
-              <dt><code>data-host</code></dt>
-            </div>
-            <div class="col">
-              <dd>
-                The base URL to link to. The default is the production WTC site
-                (<code>https://app.wellnesstogether.ca/</code>). For testing, connect to
-                the staging environment by setting this attribute to
-                <code>https://app.wellnesstogether.grnspace.ca</code>.
-              </dd>
-            </div>
-          </div>
-        </dl>
       </div>
 
       <div class="section mt-5">
@@ -144,7 +68,7 @@
         </p>
       </div>
 
-      <pre class="mb-4"><code class="css">.wtc-signin-anchor {
+      <pre class="mb-4"><code class="css">.gs-signin-anchor {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
     'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji',
     'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji' !important;
@@ -182,12 +106,12 @@
   border: 0 !important;
 }
 
-.wtc-signin-anchor:hover {
-  background-color: #e7001a !important;
+.gs-signin-anchor:hover {
+  background-color: #10633f !important;
   color: #fff !important;
 }
 
-.wtc-signin-leaf {
+.gs-signin-icon {
   margin-right: 12px !important;
   -webkit-box-sizing: border-box !important;
   box-sizing: border-box !important;
@@ -195,45 +119,17 @@
   height: 32px !important;
 }
 
-.wtc-signin-leaf-path {
-  fill: #e7001a !important;
+.gs-signin-icon-path {
+  fill: #10633f !important;
 }
 
-.wtc-signin-anchor:hover .wtc-signin-leaf-path {
+.gs-signin-anchor:hover .gs-signin-icon-path {
   fill: #fff !important;
 }</code></pre>
-
-      <div class="section">
-        <p>The CSS is also available on our CDN if you prefer:</p>
-      </div>
-      <pre
-        class="mb-4"
-      ><code class="html">&lt;link rel="stylesheet" href="https://cdn-ca.grnspace.ca/wtc_signin.css" /&gt;</code></pre>
-
-      <pre class="mb-4"><code class="html">&lt;a
-  class="wtc-signin-anchor"
-  href="https://app.wellnesstogether.grnspace.ca/oauth2/authorize?client_id=health-canada-demo-pkce&redirect_uri=https%3A%2F%2Fgrnspace.github.io%2Fwtc-oidc-client%2Foidc%2F&response_type=code&scope=openid%20email&code_challenge=4n8lM-b0cQnITX2Gy0mfviaQv_fYhU0pzEGJr7HeA-o&code_challenge_method=S256&response_mode=query"
-&gt;
-  &lt;svg class="wtc-signin-leaf" viewBox="-2015 -2000 4030 4030"&gt;
-    &lt;path
-      class="wtc-signin-leaf-path"
-      d="m-90 2030 45-863a95 95 0 0 0-111-98l-859 151 116-320a65 65 0 0 0-20-73l-941-762 212-99a65 65 0 0 0 34-79l-186-572 542 115a65 65 0 0 0 73-38l105-247 423 454a65 65 0 0 0 111-57l-204-1052 327 189a65 65 0 0 0 91-27l332-652 332 652a65 65 0 0 0 91 27l327-189-204 1052a65 65 0 0 0 111 57l423-454 105 247a65 65 0 0 0 73 38l542-115-186 572a65 65 0 0 0 34 79l212 99-941 762a65 65 0 0 0-20 73l116 320-859-151a95 95 0 0 0-111 98l45 863z"
-    &gt;&lt;/path&gt;
-  &lt;/svg&gt;
-  &lt;span&gt;Sign in with WTC&lt;/span&gt;
-&lt;/a&gt;</code></pre>
-    </div>
-
-    <!-- WTC Signin JS for rendering that button -->
-    <script
-      src="https://cdn-ca.grnspace.ca/wtc_signin.min.js"
-      async
-      defer
-    ></script>
-    <script src="/wtc-oidc-client/highlight/highlight.pack.js"></script>
+    <script src="/gs-oidc-client/highlight/highlight.pack.js"></script>
     <script>
       hljs.initHighlightingOnLoad();
     </script>
-    <script src="/wtc-oidc-client/app.js" async defer></script>
+    <script src="/gs-oidc-client/app.js" async defer></script>
   </body>
 </html>
