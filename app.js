@@ -63,7 +63,7 @@
 
   var code = params.get('code');
   if (code) {
-    var signInEl = document.getElementsByClassName('wtc-signin')[0];
+    var signInEl = document.getElementsByClassName('gs-signin')[0];
     var formData = new FormData();
     formData.append('code', code);
     formData.append('redirect_uri', signInEl.dataset.redirectUri);
