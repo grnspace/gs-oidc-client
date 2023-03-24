@@ -15,7 +15,7 @@
       integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="/wtc-oidc-client/app.css" />
+    <link rel="stylesheet" href="/gs-oidc-client/app.css" />
   </head>
   <body class="py-5">
     <div class="container">
@@ -54,78 +54,13 @@
           data-response-mode="query"
           data-host="https://app.staging.grnspace.ca"
           data-lang="fr"
-        ></div>
+        >
+          <a class="gs-signin-anchor" href="https://app.staging.grnspace.ca/oauth2/authorize?client_id=gs-dev-demo-pkce&amp;redirect_uri=https%3A%2F%2Fgrnspace.github.io%2Fgs-oidc-client%2F&amp;response_type=code&amp;scope=openid%20email&amp;code_challenge=4n8lM-b0cQnITX2Gy0mfviaQv_fYhU0pzEGJr7HeA-o&amp;code_challenge_method=S256&amp;response_mode=query"><span>Sign in with Greenspace</span></a>
+        </div>
 
         <pre><code id="id-token-result" class="json" style="display: none;"></code></pre>
       </div>
-
-      <div class="section mt-5">
-        <h3>Without JS</h3>
-
-        <p>
-          No JS? No problem! Add the button by including the following CSS and
-          HTML in your page.
-        </p>
-      </div>
-
-      <pre class="mb-4"><code class="css">.gs-signin-anchor {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-    'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji',
-    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji' !important;
-  border-radius: 3px !important;
-  -webkit-box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12),
-    0 1px 1px rgba(0, 0, 0, 0.12) !important;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12), 0 1px 1px rgba(0, 0, 0, 0.12) !important;
-  -webkit-box-sizing: border-box !important;
-  box-sizing: border-box !important;
-  -webkit-transition: background-color 0.218s, -webkit-box-shadow 0.218s !important;
-  transition: background-color 0.218s, -webkit-box-shadow 0.218s !important;
-  -o-transition: background-color 0.218s, box-shadow 0.218s !important;
-  transition: background-color 0.218s, box-shadow 0.218s !important;
-  transition: background-color 0.218s, box-shadow 0.218s,
-    -webkit-box-shadow 0.218s !important;
-  -webkit-user-select: none !important;
-  -webkit-appearance: none !important;
-  background-color: #fff !important;
-  background-image: none !important;
-  color: #333333 !important;
-  cursor: pointer !important;
-  outline: none !important;
-  position: relative !important;
-  text-align: center !important;
-  vertical-align: middle !important;
-  white-space: nowrap !important;
-  width: auto !important;
-  text-decoration: none !important;
-  padding: 12px 16px !important;
-  font-weight: 500 !important;
-  display: -webkit-inline-box !important;
-  display: inline-flex !important;
-  -webkit-box-align: center !important;
-  align-items: center !important;
-  border: 0 !important;
-}
-
-.gs-signin-anchor:hover {
-  background-color: #10633f !important;
-  color: #fff !important;
-}
-
-.gs-signin-icon {
-  margin-right: 12px !important;
-  -webkit-box-sizing: border-box !important;
-  box-sizing: border-box !important;
-  width: 32px !important;
-  height: 32px !important;
-}
-
-.gs-signin-icon-path {
-  fill: #10633f !important;
-}
-
-.gs-signin-anchor:hover .gs-signin-icon-path {
-  fill: #fff !important;
-}</code></pre>
+    </div>
     <script src="/gs-oidc-client/highlight/highlight.pack.js"></script>
     <script>
       hljs.initHighlightingOnLoad();
