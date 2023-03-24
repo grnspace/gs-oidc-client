@@ -1,3 +1,3 @@
-## OpenID + PKCE - WTC example
+## OpenID + PKCE - GS example
 
-This repository is an example configuration for using WTC with OpenID and PKCE
+This repository is an example configuration for using GS with OpenID and PKCE
