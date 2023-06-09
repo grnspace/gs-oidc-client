@@ -55,7 +55,11 @@
           data-host="https://app.staging.grnspace.com"
           data-lang="fr"
         >
-          <a class="gs-signin-anchor" href="https://app.staging.grnspace.com/oauth2/authorize?client_id=gs-dev-demo-pkce&amp;redirect_uri=https%3A%2F%2Fgrnspace.github.io%2Fgs-oidc-client%2F&amp;response_type=code&amp;scope=openid%20email&amp;code_challenge=4n8lM-b0cQnITX2Gy0mfviaQv_fYhU0pzEGJr7HeA-o&amp;code_challenge_method=S256&amp;response_mode=query"><span>Sign in with Greenspace</span></a>
+          <a
+            class="gs-signin-anchor"
+            href="https://app.staging.grnspace.com/oauth2/authorize?client_id=gs-dev-demo-pkce&amp;redirect_uri=https%3A%2F%2Fgrnspace.github.io%2Fgs-oidc-client%2F&amp;response_type=code&amp;scope=openid%20email&amp;code_challenge=4n8lM-b0cQnITX2Gy0mfviaQv_fYhU0pzEGJr7HeA-o&amp;code_challenge_method=S256&amp;response_mode=query"
+            ><span>Sign in with Greenspace</span></a
+          >
         </div>
 
         <pre><code id="id-token-result" class="json" style="display: none;"></code></pre>
@@ -65,6 +69,10 @@
     <script>
       hljs.initHighlightingOnLoad();
     </script>
-    <script src="/gs-oidc-client/app.js" async defer></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jose/4.14.4/index.bundle.min.js"
+      type="module"
+    ></script>
+    <script src="/gs-oidc-client/app.js" type="module" async defer></script>
   </body>
 </html>
